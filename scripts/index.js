@@ -1,6 +1,6 @@
-"use strict"
 
-let teams = [
+
+teams = [
     { teamcode:"DAL", 
       name:"Dallas Cowboys", 
       locatedIn:"Arlington, TX"
@@ -21,6 +21,10 @@ let teams = [
 
   window.onload = function (){
     initFootballdropdown();
+    const selectionBtn =document.getElementById("selectionBtn");
+    selectionBtn.onclick = choiceSelection;
+
+    
   }
 
   function initFootballdropdown () {
@@ -32,4 +36,22 @@ let teams = [
     }
 
   }
-  
+
+  function choiceSelection(){
+    const teamlist1 = document.getElementById("teamlist");
+    let selectionChoice = teamlist1.value;
+    //alert(selectionChoice);
+    let teamcode = teams.find(t => t.teamcode === selectionChoice);
+    alert(`You selected the ${teamcode.name} ${selectionChoice} who play in ${teamcode.locatedIn}`);
+    
+  }
+
+/* function Code(){
+    if (teams.name == selectionChoice)
+         {return true;}
+      else {return false;}
+ } */
+
+
+
+
